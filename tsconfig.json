@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "lib": ["es6"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": "src",
+    "paths": {
+      "@controllers/*": ["controllers/*"],
+      "@models/*": ["models/*"],
+      "@repositories/*": ["repositories/*"],
+      "@services/*": ["services/*"],
+      "@middlewares/*": ["middlewares/*"],
+    }
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
