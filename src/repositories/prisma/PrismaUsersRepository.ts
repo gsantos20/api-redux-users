@@ -4,7 +4,7 @@ import {
   IUsersRepository,
   PrismaUser
 } from '../IUsersRepositories'
-import { prisma } from 'database/prisma'
+import { prisma } from '../../database/prisma'
 
 class PrismaUsersRepository implements IUsersRepository {
   async getUsers(params: Partial<PrismaUser>) {

@@ -3,7 +3,7 @@ import validator from 'validator'
 import { Request, Response } from 'express'
 import { CreateUserService } from '@services/CreateUserService'
 import { PrismaUser } from '@repositories/IUsersRepositories'
-import { MockUser } from './../models/User'
+import { MockUser } from '@models/User'
 
 export class CreateUserController {
   constructor(private createUserService: CreateUserService) {}
