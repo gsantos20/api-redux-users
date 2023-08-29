@@ -1,4 +1,3 @@
-import { omit } from 'lodash'
 import {
   CreatePrismaUser,
   IUsersRepository
@@ -7,10 +6,7 @@ import { User } from '@models/User'
 
 export class UpdateUserService {
   constructor(private readonly userRepository: IUsersRepository) {}
-  async execute(
-    id: string,
-    params: Omit<CreatePrismaUser, 'password'>
-  ): Promise<Omit<User, 'password'> | Error> {
+  async execute(id: string, params: CreatePrismaUser): Promise<User | Error> {
     const existsUser = await this.userRepository.findUserById(parseInt(id))
 
     if (!existsUser) {
@@ -33,8 +29,6 @@ export class UpdateUserService {
       throw new Error('Usuário não atualizado')
     }
 
-    const userWithoutPass = omit(user, 'password')
-
-    return userWithoutPass
+    return user
   }
 }

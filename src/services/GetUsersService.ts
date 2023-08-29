@@ -1,13 +1,10 @@
-import { omit } from 'lodash'
 import { IUsersRepository } from '@repositories/IUsersRepositories'
 import { User } from '@models/User'
 import moment from 'moment'
 
 export class GetUsersService {
   constructor(private userRepository: IUsersRepository) {}
-  async execute(
-    params: Partial<User>
-  ): Promise<Omit<User, 'password'>[] | Error> {
+  async execute(params: Partial<User>): Promise<User[] | Error> {
     const filter = Object.keys(params).reduce((obj, key) => {
       const value = params[key]
 
@@ -26,11 +23,6 @@ export class GetUsersService {
 
     const users = await this.userRepository.getUsers(filter)
 
-    const result = users.map((user: User) => {
-      const userWithoutPassword = omit(user, ['password'])
-      return userWithoutPassword
-    })
-
-    return result
+    return users
   }
 }

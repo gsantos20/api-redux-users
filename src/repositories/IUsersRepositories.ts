@@ -8,9 +8,6 @@ export interface IUsersRepository {
   createUser(user: CreatePrismaUser): Promise<User | null>
   findUser(params: Partial<PrismaUser>): Promise<User | null>
   findUserById(id: number): Promise<User | null>
-  updateUser(
-    id: number,
-    params: Omit<CreatePrismaUser, 'password'>
-  ): Promise<User | null>
+  updateUser(id: number, params: CreatePrismaUser): Promise<User | null>
   deleteUser(id: number): Promise<boolean | null>
 }
