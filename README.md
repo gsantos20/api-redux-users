@@ -7,8 +7,8 @@
 ## 🚀 Como executar o projeto
 
 Este projeto é divido em duas partes:
- 1. [BackEnd](https://github.com/gsantos20/api-redux-users.git)  - [API]()
- 2. [FrontEnd](https://github.com/gsantos20/next-redux-users.git) - [Web]()
+ 1. [BackEnd](https://github.com/gsantos20/api-redux-users.git)  - [API](https://api-redux-users.vercel.app/api)
+ 2. [FrontEnd](https://github.com/gsantos20/next-redux-users.git) - [Web](https://next-redux-users.vercel.app/)
 
 💡 Tanto o Frontend precisam que o Backend esteja sendo executado para funcionar.
 
