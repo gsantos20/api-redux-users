@@ -114,7 +114,7 @@ $ npm run dev
 ```bash
 # No Terminal use os seguintes comandos
 
-npm build
+npm vercel-build
 
 node dist/server.js
 ```
