@@ -2,7 +2,6 @@ export interface User {
   id: number
   username: string
   email: string
-  password: string
   firstName: string
   lastName: string
   createdAt: Date
@@ -10,4 +9,3 @@ export interface User {
 }
 
 export type MockUser = Omit<User, 'id'>
-export type MockUserNoPass = Omit<MockUser, 'password'>

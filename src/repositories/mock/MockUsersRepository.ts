@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { MockUser, MockUserNoPass, User } from '@models/User'
+import { MockUser, User } from '@models/User'
 import { IUsersRepository } from '@repositories/IUsersRepositories'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -44,7 +44,7 @@ class MockedUsersRepository implements IUsersRepository {
     return new Promise<User[]>((resolve) => {
       const filteredUsers = this.users.filter((user) => {
         return Object.keys(params).every((key) => {
-          const value = user[key as keyof MockUserNoPass]
+          const value = user[key as keyof MockUser]
           const paramValue = params[key]
 
           if (typeof value === 'string' && typeof paramValue === 'string') {
@@ -74,7 +74,7 @@ class MockedUsersRepository implements IUsersRepository {
       resolve(
         this.users.find((user) =>
           Object.keys(params).every(
-            (key) => user[key as keyof MockUserNoPass] === params[key]
+            (key) => user[key as keyof MockUser] === params[key]
           )
         ) || null
       )
@@ -89,7 +89,7 @@ class MockedUsersRepository implements IUsersRepository {
     })
   }
 
-  async updateUser(id: number, params: MockUserNoPass) {
+  async updateUser(id: number, params: MockUser) {
     return new Promise<User | null>((resolve) => {
       const index = this.users.findIndex((user) => user.id === id)
       if (index !== -1) {

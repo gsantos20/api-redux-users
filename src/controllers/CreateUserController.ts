@@ -12,7 +12,6 @@ export class CreateUserController {
     const requiredFields: Array<keyof MockUser> = [
       'username',
       'email',
-      'password',
       'firstName',
       'lastName'
     ]

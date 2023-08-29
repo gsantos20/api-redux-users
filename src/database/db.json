@@ -2,11 +2,10 @@
   "users": [
     {
       "id": 1,
-      "username": "gustavo",
-      "email": "gustavo@gmail.com",
-      "password": "$2a$08$MSIzjNf/hcSsZXnicygqWOhnlnbTr4QUOh9vEFpsHfRh3LurYnmna",
+      "username": "Gustavo",
+      "email": "nerisgs20@gmail.com",
       "firstName": "Gustavo",
-      "lastName": "Santos"
+      "lastName": "Garcia"
     }
   ]
 }
